@@ -6,6 +6,9 @@ from retrace import *
 from plugins import *
 import json
 
+# we may create a base parser class with common interfaces, then implimated with different
+#  child parser class ,liker server crash/hung/softlockup/D state
+
 class RetraceLogParser:
     
     def __init__(self, task):
@@ -87,6 +90,8 @@ class RetraceLogParser:
     def get_call_trace(self):
         return self.call_trace 
  
+# search can also be in the same way as parser
+
 class RedHatKBSearch:
 
     def __init__(self, parser):
